@@ -1,0 +1,29 @@
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+/**
+ * 类: DateUtil <br>
+ * 描述: 日期工具类 <br>
+ * 作者: 王海涛 <br>
+ * 时间: 2015-4-8 下午04:35:14
+ */
+public final class DateUtil {
+  /**
+	 * 得到格式为：yyyy-MM-dd HH:mm:ss 的当前时间字符串
+	 * @author wanghaitao
+	 * @return
+	 */
+	public static String getCurrentDateString(){
+		return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format( new Date(System.currentTimeMillis()));
+	}
+	
+	/**
+	 * 根据日期格式类型返回当前时间的字符串
+	 * @param formatType  如：“yyyy-MM-dd HH:mm:ss”，“yyyy-MM-dd”，“HH:mm:ss”
+	 * @author wanghaitao
+	 * @return
+	 */
+	public static String getCurrentDateStringByType(String formatType){
+		return new SimpleDateFormat(formatType).format( new Date(System.currentTimeMillis()));
+	}
+}
